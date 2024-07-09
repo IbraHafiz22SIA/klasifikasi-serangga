@@ -36,3 +36,34 @@
     transform: rotate(360deg);
   }
 }
+
+.nav-link {
+  position: relative;
+  color: black; /* Default color */
+  text-decoration: none; /* Removes underline */
+  transition: color 0.3s ease; /* Smooth transition for color */
+}
+
+.nav-link:hover, .nav-link:focus {
+  color: #717171; /* Color on hover */
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 2px;
+  background-color: #B88E2F;
+  transition: transform 0.3s ease; /* Smooth transition for the underline */
+  transform: scaleX(0);
+  transform-origin: left; /* Start the animation from the left */
+}
+
+.nav-link:hover::after, .nav-link:focus::after {
+  transform: scaleX(1); /* Scale to full width on hover */
+}
+
+
+
